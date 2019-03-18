@@ -29,15 +29,15 @@ plugins {
     id("org.nosphere.apache.rat") version "0.3.1"
 }
 
-group 'org.apache.fineract.cn'
-version '0.1.0-BUILD-SNAPSHOT'
+group 'com.github.mobjex'
+version 'develop-SNAPSHOT'
 
 ext.versions = [
         springcontext        : '4.3.3.RELEASE',
         springboot           : '1.4.1.RELEASE',
         feigngson            : '8.16.2',
         findbugs             : '3.0.1',
-        frameworklangversion : '0.1.0-BUILD-SNAPSHOT'
+        frameworklangversion : 'develop-SNAPSHOT'
 ]
 
 apply plugin: 'java'
@@ -55,6 +55,7 @@ tasks.withType(JavaCompile) {
 repositories {
     jcenter()
     mavenLocal()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencyManagement {
@@ -70,7 +71,7 @@ dependencies {
             [group: 'org.springframework', name: 'spring-context', version: versions.springcontext],
             [group: 'com.google.code.findbugs', name: 'jsr305', version: versions.findbugs],
             [group: 'com.netflix.feign', name: 'feign-gson', version: versions.feigngson],
-            [group: 'org.apache.fineract.cn', name: 'lang', version: versions.frameworklangversion],
+            [group: 'com.github.mobjex', name: 'fineract-cn-lang', version: versions.frameworklangversion]
     )
 
     testCompile(
