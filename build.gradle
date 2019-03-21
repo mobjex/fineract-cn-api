@@ -29,7 +29,7 @@ plugins {
     id("org.nosphere.apache.rat") version "0.3.1"
 }
 
-group 'net.mobjex.fineract.cn'
+group 'com.github.mobjex'
 version 'develop-SNAPSHOT'
 
 ext.versions = [
@@ -71,7 +71,7 @@ dependencies {
             [group: 'org.springframework', name: 'spring-context', version: versions.springcontext],
             [group: 'com.google.code.findbugs', name: 'jsr305', version: versions.findbugs],
             [group: 'com.netflix.feign', name: 'feign-gson', version: versions.feigngson],
-            [group: 'net.mobjex.fineract.cn', name: 'fineract-cn-lang', version: versions.frameworklangversion]
+            [group: 'com.github.mobjex', name: 'fineract-cn-lang', version: versions.frameworklangversion]
     )
 
     testCompile(
